@@ -1,0 +1,45 @@
+<div class="ui grid" *ngIf=!signinCompleate>
+    <div class="five wide column"></div>
+    <div class="six wide column">
+      <form class="ui form">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" name="first-name" [(ngModel)]="userDetails.firstName" placeholder="First Name">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" name="last-name" [(ngModel)]="userDetails.lastName" placeholder="Last Name">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" [(ngModel)]="userDetails.email" placeholder="jondoe@xyz.com">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" [(ngModel)]="userDetails.password" placeholder="Password">
+          </div>
+          <div class="field">
+            <label>Confirm Password</label>
+            <input type="password" name="cPassword" [(ngModel)]="userDetails.cPassword" placeholder="Confirm Password">
+          </div>            
+          <button class="ui button" type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+        <p>{{userDetails.firstName}}</p>
+        <p>{{userDetails.lastName}}</p>
+        <p>{{userDetails.password}}</p>
+        <p>{{userDetails.cPassword}}</p>
+        <p>{{userDetails.email}}</p>
+    </div>
+  <div class="five wide column"></div>
+</div>
+<div *ngIf=signinCompleate>
+  <app-login></app-login>
+</div>
+<!-- <p>Signup works !</p>
+<ul>
+  <li class="text" style="display:unset" *ngFor="let user of users | async">
+    <p>First Name: {{user.firstName}} </p>
+    <p>Last Name: {{user.lastName}} </p>
+    <p>Email: {{user.email}} </p>    
+  </li>
+</ul> -->
